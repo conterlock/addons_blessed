@@ -1,0 +1,158 @@
+<odoo>
+    <data>
+        <record id="category_product_brand_form" model="ir.ui.view">
+            <field name="name">category_product_brand_form_view</field>
+            <field name="model">category.product.brand</field>
+            <field name="arch" type="xml">
+                <form string="Marcas">
+                    <sheet>
+                        <h1>Marcas</h1>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="models_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="category_product_brand_tree" model="ir.ui.view">
+            <field name="name">category_product_brand_tree_view</field>
+            <field name="model">category.product.brand</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="category_product_models_form" model="ir.ui.view">
+            <field name="name">category_product_models_form_view</field>
+            <field name="model">category.product.models</field>
+            <field name="arch" type="xml">
+                <form string="Modelos">
+                    <sheet>
+                        <h1>Modelos</h1>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="brand_base_id"/>
+                            <!-- <field name="cylinder_id"/> -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="category_product_models_tree" model="ir.ui.view">
+            <field name="name">category_product_models_tree_view</field>
+            <field name="model">category.product.models</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="brand_base_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="category_product_year_form" model="ir.ui.view">
+            <field name="name">category_product_year_form_view</field>
+            <field name="model">category.product.year</field>
+            <field name="arch" type="xml">
+                <form string="Años">
+                    <sheet>
+                        <h1>Años</h1>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="category_product_year_tree" model="ir.ui.view">
+            <field name="name">category_product_year_tree_view</field>
+            <field name="model">category.product.year</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="category_product_cylinder_form" model="ir.ui.view">
+            <field name="name">category_product_cylinder_form_view</field>
+            <field name="model">category.product.cylinder</field>
+            <field name="arch" type="xml">
+                <form string="Cilindraje">
+                    <sheet>
+                        <h1>Cilindraje</h1>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="year_base_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="category_product_cylinder_tree" model="ir.ui.view">
+            <field name="name">category_product_cylinder_tree_view</field>
+            <field name="model">category.product.cylinder</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="year_base_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_category_product_brand" model="ir.actions.act_window">
+            <field name="name">Marcas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">category.product.brand</field>
+            <field name="view_id" ref="category_product_brand_tree"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_category_product_year" model="ir.actions.act_window">
+            <field name="name">Años</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">category.product.year</field>
+            <field name="view_id" ref="category_product_year_tree"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_category_product_cylinder" model="ir.actions.act_window">
+            <field name="name">Cilindraje</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">category.product.cylinder</field>
+            <field name="view_id" ref="category_product_year_tree"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_category_product_models" model="ir.actions.act_window">
+            <field name="name">Modelos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">category.product.models</field>
+            <field name="view_id" ref="category_product_models_tree"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_category_product_brand" name="Marcas" parent="sale.menu_sale_config" action="action_category_product_brand"/>
+
+        <menuitem id="menu_category_product_year" name="Años" parent="sale.menu_sale_config" action="action_category_product_year"/>
+
+        <menuitem id="menu_category_product_cylinder" name="Cilindraje" parent="sale.menu_sale_config" action="action_category_product_cylinder"/>
+
+        <menuitem id="menu_category_product_models" name="Modelos" parent="sale.menu_sale_config" action="action_category_product_models"/>
+
+    </data>
+</odoo>

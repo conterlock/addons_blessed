@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="publications_bl_form" model="ir.ui.view">
+            <field name="name">publications.bl.form.view</field>
+            <field name="model">publications.bl</field>
+            <field name="arch" type="xml">
+                <form string="Publicaciones">
+                    <sheet>
+                        <h1>Detalles de publicación</h1>
+                        <group>
+                            <field name="portal"/>
+                            <field name="url"/>
+                            <field name="price"/>
+                            <field name="public"/>
+                        </group>
+                        <button name="do_public" type="object" string="Publicar" class="oe_stat_button" icon="fa-cloud-upload"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
