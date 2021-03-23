@@ -13,7 +13,6 @@ class CategoryProductBrand(models.Model):
     public = fields.Boolean(string='Publicado', default=False)
 
     def do_public(self):
-        print("Hola Luis")
         raise UserError(('Hola!!! Este Boton está en construcción, disculpa las molestias.'))
 
 
